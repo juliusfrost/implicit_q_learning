@@ -21,8 +21,8 @@ For a PyTorch reimplementation see https://github.com/rail-berkeley/rlkit/tree/m
 
 ```bash
 pip install --upgrade pip
-
-pip install -r requirements.txt
+pip install --upgrade poetry
+poetry install
 
 # Installs the wheel compatible with Cuda 11 and cudnn 8.
 pip install --upgrade "jax[cuda]>=0.2.27" -f https://storage.googleapis.com/jax-releases/jax_releases.html
