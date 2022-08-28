@@ -7,7 +7,7 @@ authors = ["Your Name <you@example.com>"]
 [tool.poetry.dependencies]
 python = ">=3.8,<3.11"
 numpy = "^1.23.1"
-d4rl = { git = "https://github.com/juliusfrost/d4rl.git", rev = "7ffa6a80ff1a06f43a1e633bebca021a8c9125ac" }
+d4rl = { git = "https://github.com/Farama-Foundation/D4RL.git", rev = "f2a05c0d66722499bf8031b094d9af3aea7c372b" }
 scipy = "^1.8.1"
 absl-py = "^1.2.0"
 gym = { version = "~0.24.0", extras = ["mujoco"] }
@@ -23,6 +23,7 @@ imageio = "^2.19.5"
 imageio-ffmpeg = "^0.4.7"
 
 [tool.poetry.dev-dependencies]
+tensorboard = "^2.10.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
