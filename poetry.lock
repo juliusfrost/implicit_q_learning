@@ -220,35 +220,6 @@ optional = false
 python-versions = "*"
 
 [[package]]
-name = "etils"
-version = "0.7.1"
-description = "Collection of common python utils"
-category = "main"
-optional = false
-python-versions = ">=3.7"
-
-[package.dependencies]
-etils = {version = "*", extras = ["epy"], optional = true, markers = "extra == \"epath\""}
-importlib_resources = {version = "*", optional = true, markers = "extra == \"epath\""}
-typing_extensions = {version = "*", optional = true, markers = "extra == \"epath\""}
-zipp = {version = "*", optional = true, markers = "extra == \"epath\""}
-
-[package.extras]
-all = ["etils", "etils", "etils", "etils", "etils", "etils", "etils", "etils", "etils", "etils", "etils"]
-array-types = ["etils"]
-dev = ["chex", "pylint (>=2.6.0)", "pytest", "pytest-subtests", "pytest-xdist", "yapf"]
-ecolab = ["etils", "etils", "jupyter", "mediapy", "numpy"]
-edc = ["etils"]
-enp = ["etils", "numpy"]
-epath = ["etils", "importlib-resources", "typing-extensions", "zipp"]
-epy = ["typing-extensions"]
-etqdm = ["absl-py", "etils", "tqdm"]
-etree = ["etils", "etils", "etils", "etils"]
-etree-dm = ["dm-tree", "etils"]
-etree-jax = ["etils", "jax"]
-etree-tf = ["etils", "tf-nightly"]
-
-[[package]]
 name = "fasteners"
 version = "0.17.3"
 description = "A python package that provides useful locks"
@@ -267,6 +238,14 @@ python-versions = ">=3.7"
 [package.extras]
 docs = ["furo (>=2022.6.21)", "sphinx (>=5.1.1)", "sphinx-autodoc-typehints (>=1.19.1)"]
 testing = ["covdefaults (>=2.2)", "coverage (>=6.4.2)", "pytest (>=7.1.2)", "pytest-cov (>=3)", "pytest-timeout (>=2.1)"]
+
+[[package]]
+name = "flatbuffers"
+version = "2.0.7"
+description = "The FlatBuffers serialization format for Python"
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
 name = "flax"
@@ -397,31 +376,28 @@ protobuf = ["grpcio-tools (>=1.48.0)"]
 
 [[package]]
 name = "gym"
-version = "0.24.1"
+version = "0.23.1"
 description = "Gym: A universal API for reinforcement learning environments"
 category = "main"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 
 [package.dependencies]
 cloudpickle = ">=1.2.0"
 gym_notices = ">=0.0.4"
-imageio = {version = ">=2.14.1", optional = true, markers = "extra == \"mujoco\""}
-importlib_metadata = {version = ">=4.8.0", markers = "python_version < \"3.10\""}
-mujoco = {version = "2.2.0", optional = true, markers = "extra == \"mujoco\""}
+importlib_metadata = {version = ">=4.10.0", markers = "python_version < \"3.10\""}
 numpy = ">=1.18.0"
 
 [package.extras]
 accept-rom-license = ["autorom[accept-rom-license] (>=0.4.2,<0.5.0)"]
-all = ["ale-py (>=0.7.5,<0.8.0)", "box2d-py (==2.3.5)", "imageio (>=2.14.1)", "lz4 (>=3.1.0)", "matplotlib (>=3.0)", "mock", "mujoco (==2.2.0)", "mujoco_py (>=2.1,<2.2)", "opencv-python (>=3.0)", "pygame (==2.1.0)", "pytest"]
-atari = ["ale-py (>=0.7.5,<0.8.0)"]
+all = ["ale-py (>=0.7.4,<0.8.0)", "box2d-py (==2.3.5)", "box2d-py (==2.3.5)", "lz4 (>=3.1.0)", "lz4 (>=3.1.0)", "mujoco_py (>=1.50,<2.0)", "opencv-python (>=3.0)", "opencv-python (>=3.0)", "pygame (==2.1.0)", "pygame (==2.1.0)", "pygame (==2.1.0)", "pygame (==2.1.0)", "pygame (==2.1.0)", "pygame (==2.1.0)", "scipy (>=1.4.1)", "scipy (>=1.4.1)"]
+atari = ["ale-py (>=0.7.4,<0.8.0)"]
 box2d = ["box2d-py (==2.3.5)", "pygame (==2.1.0)"]
 classic_control = ["pygame (==2.1.0)"]
-mujoco = ["imageio (>=2.14.1)", "mujoco (==2.2.0)"]
-mujoco_py = ["mujoco_py (>=2.1,<2.2)"]
-other = ["lz4 (>=3.1.0)", "matplotlib (>=3.0)", "opencv-python (>=3.0)"]
-testing = ["box2d-py (==2.3.5)", "imageio (>=2.14.1)", "lz4 (>=3.1.0)", "matplotlib (>=3.0)", "mock", "mujoco (==2.2.0)", "mujoco_py (>=2.1,<2.2)", "opencv-python (>=3.0)", "pygame (==2.1.0)", "pytest"]
-toy_text = ["pygame (==2.1.0)"]
+mujoco = ["mujoco_py (>=1.50,<2.0)"]
+nomujoco = ["box2d-py (==2.3.5)", "lz4 (>=3.1.0)", "opencv-python (>=3.0)", "pygame (==2.1.0)", "pygame (==2.1.0)", "pygame (==2.1.0)", "scipy (>=1.4.1)"]
+other = ["lz4 (>=3.1.0)", "opencv-python (>=3.0)"]
+toy_text = ["pygame (==2.1.0)", "scipy (>=1.4.1)"]
 
 [[package]]
 name = "gym-notices"
@@ -452,7 +428,7 @@ python-versions = ">=3.5"
 
 [[package]]
 name = "imageio"
-version = "2.21.1"
+version = "2.21.2"
 description = "Library for reading and writing a wide range of image, video, scientific, and volumetric data formats."
 category = "main"
 optional = false
@@ -504,23 +480,8 @@ perf = ["ipython"]
 testing = ["flufl.flake8", "importlib-resources (>=1.3)", "packaging", "pyfakefs", "pytest (>=6)", "pytest-black (>=0.3.7)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=1.3)", "pytest-flake8", "pytest-mypy (>=0.9.1)", "pytest-perf (>=0.9.2)"]
 
 [[package]]
-name = "importlib-resources"
-version = "5.9.0"
-description = "Read resources from Python packages"
-category = "main"
-optional = false
-python-versions = ">=3.7"
-
-[package.dependencies]
-zipp = {version = ">=3.1.0", markers = "python_version < \"3.10\""}
-
-[package.extras]
-docs = ["jaraco.packaging (>=9)", "jaraco.tidelift (>=1.4)", "rst.linker (>=1.9)", "sphinx"]
-testing = ["pytest (>=6)", "pytest-black (>=0.3.7)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=1.3)", "pytest-flake8", "pytest-mypy (>=0.9.1)"]
-
-[[package]]
 name = "jax"
-version = "0.3.16"
+version = "0.3.4"
 description = "Differentiate, compile, and transform Numpy code."
 category = "main"
 optional = false
@@ -528,25 +489,24 @@ python-versions = ">=3.7"
 
 [package.dependencies]
 absl-py = "*"
-etils = {version = "*", extras = ["epath"]}
-numpy = ">=1.20"
+jaxlib = {version = "0.3.2+cuda11.cudnn82", optional = true, markers = "extra == \"cuda\""}
+numpy = ">=1.19"
 opt_einsum = "*"
-scipy = ">=1.5"
+scipy = ">=1.2.1"
 typing_extensions = "*"
 
 [package.extras]
-australis = ["protobuf (>=3.13,<4)"]
-ci = ["jaxlib (==0.3.15)"]
-cpu = ["jaxlib (==0.3.15)"]
-cuda = ["jaxlib (==0.3.15+cuda11.cudnn82)"]
-cuda11_cudnn805 = ["jaxlib (==0.3.15+cuda11.cudnn805)"]
-cuda11_cudnn82 = ["jaxlib (==0.3.15+cuda11.cudnn82)"]
-minimum-jaxlib = ["jaxlib (==0.3.14)"]
-tpu = ["jaxlib (==0.3.15)", "libtpu-nightly (==0.1.dev20220723)", "requests"]
+ci = ["jaxlib (==0.3.2)"]
+cpu = ["jaxlib (==0.3.2)"]
+cuda = ["jaxlib (==0.3.2+cuda11.cudnn82)"]
+cuda11_cudnn805 = ["jaxlib (==0.3.2+cuda11.cudnn805)"]
+cuda11_cudnn82 = ["jaxlib (==0.3.2+cuda11.cudnn82)"]
+minimum-jaxlib = ["jaxlib (==0.3.0)"]
+tpu = ["jaxlib (==0.3.2)", "libtpu-nightly (==0.1.dev20220315)", "requests"]
 
 [[package]]
 name = "jaxlib"
-version = "0.3.15"
+version = "0.3.2+cuda11.cudnn82"
 description = "XLA library for JAX"
 category = "main"
 optional = false
@@ -554,8 +514,14 @@ python-versions = ">=3.7"
 
 [package.dependencies]
 absl-py = "*"
+flatbuffers = ">=1.12,<3.0"
 numpy = ">=1.19"
-scipy = ">=1.5"
+scipy = "*"
+
+[package.source]
+type = "legacy"
+url = "https://jorenham.github.io/jax_pep503"
+reference = "jorenham/jax_pep503"
 
 [[package]]
 name = "kiwisolver"
@@ -671,7 +637,7 @@ python-versions = "*"
 
 [[package]]
 name = "mujoco"
-version = "2.2.0"
+version = "2.2.1"
 description = "MuJoCo Physics Simulator"
 category = "main"
 optional = false
@@ -1147,7 +1113,7 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<3.11"
-content-hash = "7593c20c2135092f19de279e31a5b49d1de74abfb20dda3ce4ccefa8f3e3290d"
+content-hash = "a00d00b300c4ae3c8bac00eb93e6737a646234807ca27cf7648ab5fbc8a35477"
 
 [metadata.files]
 absl-py = [
@@ -1343,10 +1309,6 @@ dm-tree = [
     {file = "dm_tree-0.1.7-cp39-cp39-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:1379a02df36e2bbff9819ceafa55ccd436b15af398803f781f372f8ead7ed871"},
     {file = "dm_tree-0.1.7-cp39-cp39-win_amd64.whl", hash = "sha256:3ca0a58e219b7b0bc201fea4679971188d0a9028a2543c16803a84e8f8c7eb2c"},
 ]
-etils = [
-    {file = "etils-0.7.1-py3-none-any.whl", hash = "sha256:9b5140835372e3db8b6e8d7da9e16beb2390ae6f24c253107c8127e4d2205189"},
-    {file = "etils-0.7.1.tar.gz", hash = "sha256:207c097dd4180d5e5ab1c7b7ee78b7bf9471e12534deace23b1d392debd292f3"},
-]
 fasteners = [
     {file = "fasteners-0.17.3-py3-none-any.whl", hash = "sha256:cae0772df265923e71435cc5057840138f4e8b6302f888a567d06ed8e1cbca03"},
     {file = "fasteners-0.17.3.tar.gz", hash = "sha256:a9a42a208573d4074c77d041447336cf4e3c1389a256fd3e113ef59cf29b7980"},
@@ -1354,6 +1316,10 @@ fasteners = [
 filelock = [
     {file = "filelock-3.8.0-py3-none-any.whl", hash = "sha256:617eb4e5eedc82fc5f47b6d61e4d11cb837c56cb4544e39081099fa17ad109d4"},
     {file = "filelock-3.8.0.tar.gz", hash = "sha256:55447caa666f2198c5b6b13a26d2084d26fa5b115c00d065664b2124680c4edc"},
+]
+flatbuffers = [
+    {file = "flatbuffers-2.0.7-py2.py3-none-any.whl", hash = "sha256:71e135d533be527192819aaab757c5e3d109cb10fbb01e687f6bdb7a61ad39d1"},
+    {file = "flatbuffers-2.0.7.tar.gz", hash = "sha256:0ae7d69c5b82bf41962ca5fde9cc43033bc9501311d975fd5a25e8a7d29c1245"},
 ]
 flax = [
     {file = "flax-0.5.3-py3-none-any.whl", hash = "sha256:911dc4d6463ccba9808d303f44dfb4a0a6de277be8f3cbfda1471ed1a3e19374"},
@@ -1438,7 +1404,7 @@ grpcio = [
     {file = "grpcio-1.48.0.tar.gz", hash = "sha256:eaf4bb73819863440727195411ab3b5c304f6663625e66f348e91ebe0a039306"},
 ]
 gym = [
-    {file = "gym-0.24.1.tar.gz", hash = "sha256:9b23bbaa96ba0771a16a9f80062edb79b6f176ffdc84f39ea4645b03a8b72291"},
+    {file = "gym-0.23.1.tar.gz", hash = "sha256:d0f9b9da34edbdace421c9442fc9205d03b8d15d0fb451053c766cde706d40e0"},
 ]
 gym-notices = [
     {file = "gym-notices-0.0.8.tar.gz", hash = "sha256:ad25e200487cafa369728625fe064e88ada1346618526102659b4640f2b4b911"},
@@ -1471,8 +1437,8 @@ idna = [
     {file = "idna-3.3.tar.gz", hash = "sha256:9d643ff0a55b762d5cdb124b8eaa99c66322e2157b69160bc32796e824360e6d"},
 ]
 imageio = [
-    {file = "imageio-2.21.1-py3-none-any.whl", hash = "sha256:ea8770d082cea02de6ca5500ab3ad649a8c09832528152efd07da5c225b13722"},
-    {file = "imageio-2.21.1.tar.gz", hash = "sha256:5f0278217c1cf99d90ef855dab948f93d9fce0ab7ab388e13a597c706b7ec4e5"},
+    {file = "imageio-2.21.2-py3-none-any.whl", hash = "sha256:abe8aa4f2ac71a1b79094a01eb46d3acc150d11b4b79dbe353edfefb566ad541"},
+    {file = "imageio-2.21.2.tar.gz", hash = "sha256:5702e7b4874bdb2f428b08c7491699b44842129d412cdaa7177ba7ff059deb2c"},
 ]
 imageio-ffmpeg = [
     {file = "imageio-ffmpeg-0.4.7.tar.gz", hash = "sha256:7a08838f97f363e37ca41821b864fd3fdc99ab1fe2421040c78eb5f56a9e723e"},
@@ -1486,26 +1452,10 @@ importlib-metadata = [
     {file = "importlib_metadata-4.12.0-py3-none-any.whl", hash = "sha256:7401a975809ea1fdc658c3aa4f78cc2195a0e019c5cbc4c06122884e9ae80c23"},
     {file = "importlib_metadata-4.12.0.tar.gz", hash = "sha256:637245b8bab2b6502fcbc752cc4b7a6f6243bb02b31c5c26156ad103d3d45670"},
 ]
-importlib-resources = [
-    {file = "importlib_resources-5.9.0-py3-none-any.whl", hash = "sha256:f78a8df21a79bcc30cfd400bdc38f314333de7c0fb619763f6b9dabab8268bb7"},
-    {file = "importlib_resources-5.9.0.tar.gz", hash = "sha256:5481e97fb45af8dcf2f798952625591c58fe599d0735d86b10f54de086a61681"},
-]
 jax = [
-    {file = "jax-0.3.16.tar.gz", hash = "sha256:211e6fb083fe846721285d5b9a6a22d16733f21a2ace350300039decfc7bf9a4"},
+    {file = "jax-0.3.4.tar.gz", hash = "sha256:f26854ea8f5449493fadc2f70936c57b7e07b5eb91f81f710748e93e97ec785a"},
 ]
-jaxlib = [
-    {file = "jaxlib-0.3.15-cp310-none-macosx_10_14_x86_64.whl", hash = "sha256:7555be95d567572579a2010ed03506e31ff87d55c21c1bc80eddcccd87b3f723"},
-    {file = "jaxlib-0.3.15-cp310-none-macosx_11_0_arm64.whl", hash = "sha256:89f5e27c59f8f5c2e5f3ad377ace2bc03e68728ff27aaf9e82e59d2a1a4c3c6d"},
-    {file = "jaxlib-0.3.15-cp310-none-manylinux2014_x86_64.whl", hash = "sha256:3af8343024ec44488bb542e62c7a61488df558e6da4bf072ebbdac319362a03f"},
-    {file = "jaxlib-0.3.15-cp37-none-macosx_10_14_x86_64.whl", hash = "sha256:8f999a69fda69976bdcfa45abcc99614160035ee878a544e713affd45cd5b4d1"},
-    {file = "jaxlib-0.3.15-cp37-none-manylinux2014_x86_64.whl", hash = "sha256:36570c1699b5bb4038f1f708d976afefff9fb745cc131c0c8c9340a072b38244"},
-    {file = "jaxlib-0.3.15-cp38-none-macosx_10_14_x86_64.whl", hash = "sha256:19038f91f49f44df1a9d2c00e11f7f61e922e4651c10cd928ac3dcb745234dbf"},
-    {file = "jaxlib-0.3.15-cp38-none-macosx_11_0_arm64.whl", hash = "sha256:30385dafe8299c60da1e1f6f3e0d095cfd2aeefc398c67501a772c8238fc57cd"},
-    {file = "jaxlib-0.3.15-cp38-none-manylinux2014_x86_64.whl", hash = "sha256:a97e80d533d1c66fe0c963e6a25cf85e00732710b6e17af568b1f4f026b52919"},
-    {file = "jaxlib-0.3.15-cp39-none-macosx_10_14_x86_64.whl", hash = "sha256:e8d63b156cbac46a15c2024f63761b0bc1f73df94d6a97fb641326c74aeab6ef"},
-    {file = "jaxlib-0.3.15-cp39-none-macosx_11_0_arm64.whl", hash = "sha256:c290ca60b1c08d0ac991be922146775a80943e7a970cde3fc42d6667ca0c115d"},
-    {file = "jaxlib-0.3.15-cp39-none-manylinux2014_x86_64.whl", hash = "sha256:ef58c67341c87789417891f7bd832fc84e23044ef6b085fb9c8306c60ec43bda"},
-]
+jaxlib = []
 kiwisolver = [
     {file = "kiwisolver-1.4.4-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:2f5e60fabb7343a836360c4f0919b8cd0d6dbf08ad2ca6b9cf90bf0c76a3c4f6"},
     {file = "kiwisolver-1.4.4-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:10ee06759482c78bdb864f4109886dff7b8a56529bc1609d4f1112b93fe6423c"},
@@ -1815,26 +1765,26 @@ msgpack = [
     {file = "msgpack-1.0.4.tar.gz", hash = "sha256:f5d869c18f030202eb412f08b28d2afeea553d6613aee89e200d7aca7ef01f5f"},
 ]
 mujoco = [
-    {file = "mujoco-2.2.0-cp310-cp310-macosx_10_12_x86_64.whl", hash = "sha256:103357863320fdd5b8ed3dc41dd719e7211efea3b3d675c10eb7d0aa26a8e2a2"},
-    {file = "mujoco-2.2.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:8c88ce6f7c0ecbd72826a6f24b19eacbedb1214ad0087361ff6aa44a4524023e"},
-    {file = "mujoco-2.2.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:290c9c358d89cbc3bfec7077fd57d4a7983a17e85af9b8c373ca6a26c39b4697"},
-    {file = "mujoco-2.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8be58a89b2050d3db00d08117e08dcb354b9502a82ea2143c60f8a3c48a2cbca"},
-    {file = "mujoco-2.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:bc6de46a43089efdf7417a2efea932ec66bef2bca95c9fcf6b4d8ce198260743"},
-    {file = "mujoco-2.2.0-cp37-cp37m-macosx_10_12_x86_64.whl", hash = "sha256:e65c0f891ea4cd47dbc1a54204b8cbb08711bd0cda1b4340fd31c0a718b683a8"},
-    {file = "mujoco-2.2.0-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:cd4361a183bffc10e6d5520537a6657a5507398ab9df072b3cace3262af274b9"},
-    {file = "mujoco-2.2.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:7b8d28f35cc4efdb284feb8d145cc2245fb08c9c68c4682464249933e015e9ad"},
-    {file = "mujoco-2.2.0-cp37-cp37m-win_amd64.whl", hash = "sha256:969ca82382686707166451362f96f467da5602e44af3542fdd0ed4babb92a9f1"},
-    {file = "mujoco-2.2.0-cp38-cp38-macosx_10_12_x86_64.whl", hash = "sha256:adb2e3dfef47648e3daf95cb40433653ef80eb97f22527906c13b47be2dd6c06"},
-    {file = "mujoco-2.2.0-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:0d76ab6a13fd66d98f80a41e7b29f8410eac13ec1f9b1badc927270876afc266"},
-    {file = "mujoco-2.2.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:f47d94afcd0081bd547a2e858af98e5efe31c647f824fc93a5edde656e078d55"},
-    {file = "mujoco-2.2.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:7da2485571c8e2c1a4b08b0a298ea7e2a68e4d994fd16f7842da0b7202790d03"},
-    {file = "mujoco-2.2.0-cp38-cp38-win_amd64.whl", hash = "sha256:8698ba1e48c17b506c138408fb66a3b27e3930a2f2fad6eae1f2123500970013"},
-    {file = "mujoco-2.2.0-cp39-cp39-macosx_10_12_x86_64.whl", hash = "sha256:7f3855256e880a7e5517c38d7aabc4b1dd6548723b1ba9ce0dfb0155cf667698"},
-    {file = "mujoco-2.2.0-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:3fdcf6b9092f0f74042c61fe0231bfa03f4fa9a044c216b8daab8bf691ac44e8"},
-    {file = "mujoco-2.2.0-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:ec1cfc369ebf574655731a2823ba05b46c268595eebdd960698f3e1dd965d893"},
-    {file = "mujoco-2.2.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:4c2e3505614c92debfdf4fa182473012cc634915e995ed13bfbf3724e86d9983"},
-    {file = "mujoco-2.2.0-cp39-cp39-win_amd64.whl", hash = "sha256:6fad79862c9d77bd8db7353e9184790dd5b78d2a100ff0583350ec03c65aa78b"},
-    {file = "mujoco-2.2.0.tar.gz", hash = "sha256:1bb370365a10f3e76eee8a438c8eafcd0d2721e05c1c9bf602cded8223f819cf"},
+    {file = "mujoco-2.2.1-cp310-cp310-macosx_10_12_x86_64.whl", hash = "sha256:3f4f2118ef21c4ee3833438b4b3f08bea00641245e4a97da33f279ea77774f2e"},
+    {file = "mujoco-2.2.1-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:db8679f2b5d977f9038653f68c751eb57638b6fa7ec2a2d7b701732481edfca6"},
+    {file = "mujoco-2.2.1-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:3eea4d2851f184be6a26d7a1561e2211a6bdb850f2c0f8fdbd4def18010cb458"},
+    {file = "mujoco-2.2.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:19e884a1227c4424e4d48ad10c220b0bf0f078d2a4558a452d5ca832f2880886"},
+    {file = "mujoco-2.2.1-cp310-cp310-win_amd64.whl", hash = "sha256:7d86776dd64956ba6f415af397c5da12a56ca4f9c17758bb387183ff407222b1"},
+    {file = "mujoco-2.2.1-cp37-cp37m-macosx_10_12_x86_64.whl", hash = "sha256:4e9ad68b6fabbeeb453e92222703f2ff319ffd1a78022048f3e432324cfd3227"},
+    {file = "mujoco-2.2.1-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7f38e7287b0acd791772509c12b6e254cddd910b3b8df4b891a3a4f7c67017fe"},
+    {file = "mujoco-2.2.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:41f2ec539ace79c0e16537a1e5c944abdb51c9325f8e2f00cdcc81a702adf31c"},
+    {file = "mujoco-2.2.1-cp37-cp37m-win_amd64.whl", hash = "sha256:e7c8f45901d8afcc77926f30bf9d21c443392d96fbc238df30903f10e8e2b2ab"},
+    {file = "mujoco-2.2.1-cp38-cp38-macosx_10_12_x86_64.whl", hash = "sha256:8530c66cf9fa6ca55e6059f6db805efbe0e7ea112a1b703c8ec8a24e519624f1"},
+    {file = "mujoco-2.2.1-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:9b277d458d2e32a572534b7d74d1c258ba76fe87a3ce18c9ac87ff68e2cf5858"},
+    {file = "mujoco-2.2.1-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:8032567dd9483cba0629f20e932ab25b7a72e775df4421fb04b5bd382fb14ec8"},
+    {file = "mujoco-2.2.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:0b77fd627c5d1182f6751fa306d1fa8d1c8cb47dc628f1e0eae0055fec0c0011"},
+    {file = "mujoco-2.2.1-cp38-cp38-win_amd64.whl", hash = "sha256:dc7aea394f35d9a29a7a92ebb7b4a50b816d0a38dadda154efbf5d416abd72be"},
+    {file = "mujoco-2.2.1-cp39-cp39-macosx_10_12_x86_64.whl", hash = "sha256:e1f90556898ce22f30de1f63ca48dd92926cbcce8a3c5208aa8b75f724799500"},
+    {file = "mujoco-2.2.1-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:d07d98a2b64b1aca7d688af9056c08858a138803c9d5e59652f24989f93d02e6"},
+    {file = "mujoco-2.2.1-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:7fda95da7ec2998157d9c2e75f2647895c765ad787e4b1bcf79a3999842818ff"},
+    {file = "mujoco-2.2.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:377e1783d91b568682b6b82da8bc7b0532bf6e7d15c6296e2195ff46d5e66c9c"},
+    {file = "mujoco-2.2.1-cp39-cp39-win_amd64.whl", hash = "sha256:bb275682427ff13dc285b306b3277f29e16d4dd9d98d0dd6782976fa0916df1a"},
+    {file = "mujoco-2.2.1.tar.gz", hash = "sha256:cd1b76ff53fc9e6ac87c7b3f8c52104cb50f2a8782fc7a4954a8d258057b0a32"},
 ]
 mujoco-py = [
     {file = "mujoco-py-2.1.2.14.tar.gz", hash = "sha256:eb5b14485acf80a3cf8c15f4b080c6a28a9f79e68869aa696d16cbd51ea7706f"},
